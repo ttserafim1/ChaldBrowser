@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaldBrowser - Главное меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .search-container {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #0078d7;
+            color: white;
+        }
+        .quick-links {
+            margin-top: 30px;
+        }
+        .quick-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать в ChaldBrowser</h1>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Введите запрос...">
+        <button onclick="search()">Поиск</button>
+    </div>
+    <div class="quick-links">
+        <h2>Быстрые ссылки</h2>
+        <a href="https://www.google.com">Google</a>
+        <a href="https://www.youtube.com">YouTube</a>
+        <a href="https://www.github.com">GitHub</a>
+    </div>
+    <script>
+        function search() {
+            let query = document.getElementById("search").value;
+            if (query) {
+                window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            }
+        }
+    </script>
+</body>
+</html>
